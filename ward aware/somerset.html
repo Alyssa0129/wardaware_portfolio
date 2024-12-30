@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yona of the Dawn</title>
+    <!---reference: https://teratail.com/questions/311686--->
+</head>
+
+<body>
+  <h1>Ward Aware</h1>
+
+
+
+    <FORM>
+        <!--change the variable according to what is selected in the dropdown menu-->
+        <div style="position: relative; left:400px; bottom:0px">
+            <SELECT name="channel" size="1" onchange="imgChange(this,program1)">
+                <OPTION value="0">Average Rent
+                <OPTION value="1">Population
+                <OPTION value="2">public transit
+                <OPTION value="3">Park
+            </SELECT>
+        </div>
+          <P><IMG src="somerset_averagerent.png" height="100" width="500" id="program1" alt=""></p>
+    </FORM>
+    <script>
+        function imgChange(parts, id) {
+            fname = parts.options[parts.selectedIndex].value;
+            /*send a path to the selected image*/
+            if (fname == 0) id.src = "somerset_averagerent.png";
+            if (fname == 1) id.src = "somerset_population.png";
+            if (fname == 2) id.src = "somerset_transit.png";
+            if (fname == 3) id.src = "somerset_park.png";
+        }
+    </script>
+</body>
+</html>

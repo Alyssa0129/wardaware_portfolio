@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #707B9E;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #1E88E5;
+}
+
+.active {
+  background-color: #2AAF49;
+}
+</style>
+</head>
+<body>
+<!---
+<script src="filter.js"></script>
+--->
+<div class="header">
+  <h2> <centre> ITEC2100A - Ward Aware </centre> </h2>
+</div>
+
+<p> Hover over the maps.</p>
+
+<h3> Average Rent Price in Each Ward in Ottawa </h3>
+<div class='tableauPlaceholder' id='viz1647995576074' style='position: relative'><noscript>
+  <a href='#'>
+    <img id='rentimg' alt='Poverty (%) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1_rss.png' style='border: none' />
+  </a>
+</noscript>
+<object class='tableauViz'  style='display:none;'>
+  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+  <param name='embed_code_version' value='3' />
+   <param name='site_root' value='' />
+   <param name='name' value='ITEC2100A_WardAware&#47;AvgRent' />
+   <param name='tabs' value='no' />
+   <param name='toolbar' value='yes' />
+   <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1.png' />
+   <param name='animate_transition' value='yes' />
+   <param name='display_static_image' value='yes' />
+   <param name='display_spinner' value='yes' />
+   <param name='display_overlay' value='yes' />
+   <param name='display_count' value='yes' />
+   <param name='language' value='en-US' />
+   <param name='filter' value='publish=yes' />
+ </object>
+</div>
+
+<script type='text/javascript'>
+ var divElement = document.getElementById('viz1647995576074');
+ var vizElement = divElement.getElementsByTagName('object')[0];
+ vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+ var scriptElement = document.createElement('script');
+ scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+ vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<h2> Average Population of Each Ward in Ottawa </h2>
+<div class='tableauPlaceholder' id='viz1647994973441' style='position: relative'>
+  <noscript>
+    <a href='#'>
+      <img id='populationimg' alt='Renters (%) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware_Population&#47;Population&#47;1_rss.png' style='border: none' />
+    </a>
+  </noscript>
+  <object class='tableauViz'  style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+    <param name='name' value='ITEC2100A_WardAware_Population&#47;Population' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware_Population&#47;Population&#47;1.png' />
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+    <param name='language' value='en-US' />
+    <param name='filter' value='publish=yes' />
+  </object>
+</div>
+
+<script type='text/javascript'>
+var divElement = document.getElementById('viz1647994973441');
+var vizElement = divElement.getElementsByTagName('object')[0];
+vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+<FORM>
+    <!--change the variable according to what is selected in the dropdown menu-->
+    <div style="position: relative; left:560px; bottom:0px">
+        <SELECT name="channel" size="1" onchange="imgChange(this,program1)">
+            <OPTION value="0">Population
+            <OPTION value="1">Rent
+        </SELECT>
+    </div>
+      <P><IMG src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1_rss.png" height="450" width="700" id="program1" alt=""></p>
+</FORM>
+
+<script>
+    function imgChange(parts, id) {
+        fname = parts.options[parts.selectedIndex].value;
+        /*send a path to the selected image*/
+        if (fname == 0) document.getElementById("rentimg").src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1_rss.png";
+        if (fname == 1) document.getElementById("populationimg").src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1_rss.png";
+
+        /*if (fname == 0) id.src = "https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware_Population&#47;Population&#47;1_rss.png";
+        if (fname == 1) id.src = "https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IT&#47;ITEC2100A_WardAware&#47;AvgRent&#47;1_rss.png";
+        */
+    }
+</script>
+
+</body>
+</html>
